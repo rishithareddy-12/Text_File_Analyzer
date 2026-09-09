@@ -1,0 +1,4 @@
+python is a rogramming language used to build software.
+Artificial intelligence allows computers to learn from data.
+machine learning is used to create intelligent applications.
+python is widely used for data science and artificial intelligence.
