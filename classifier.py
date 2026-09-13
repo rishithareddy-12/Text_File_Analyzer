@@ -1,6 +1,8 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from collections import Counter
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
 
 # ----------------------------------------
@@ -48,13 +50,37 @@ vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(texts)
 
 
-# ----------------------------------------
-# 4. CREATE AND TRAIN MODEL
+## ----------------------------------------
+# 4. SPLIT TRAINING AND TEST DATA
 # ----------------------------------------
 
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    labels,
+    test_size=0.2,
+    random_state=42
+)
+
+
+# ----------------------------------------
+# 5. CREATE AND TRAIN MODEL
+# ----------------------------------------
 model = LogisticRegression()
 
-model.fit(X, labels)
+model.fit(X_train, y_train)
+
+
+# ----------------------------------------
+# 6. MODEL ACCURACY
+# ----------------------------------------
+
+predictions = model.predict(X_test)
+
+accuracy = accuracy_score(y_test, predictions)
+
+print("\nModel Accuracy:", round(accuracy * 100, 2), "%")
+print("Test samples:", len(y_test))
+print("Correct predictions:", (predictions == y_test))
 
 
 # ----------------------------------------
