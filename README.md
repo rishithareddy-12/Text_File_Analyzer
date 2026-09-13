@@ -20,6 +20,7 @@ The system analyzes text files, extracts useful information, identifies importan
 - Scikit-learn
 - Logistic Regression
 - Git and GitHub
+-Streamlit
 
 ## Features
 
@@ -61,3 +62,20 @@ Text_File_Analyzer/
 └── data/
     ├── tech.txt
     └── sports.txt
+    ## How to run
+    Install the required libraries:
+    ```bash
+    pip install -r requirements.txt
+## Deployment
+
+The application is deployed using Streamlit Community Cloud.
+
+🔗 **Live Demo:** [Text File Analyzer](https://textfileanalyzer-wa9gtnte9qumqzb2rw5zkp.streamlit.app)
+
+## Internship
+
+This project was developed as part of my internship at **Geonixa**.
+
+## Author
+
+**Rishitha**
